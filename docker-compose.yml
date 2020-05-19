@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agro_react
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 200:3000
+    command: npm run start
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
