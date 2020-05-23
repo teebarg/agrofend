@@ -1,0 +1,11 @@
+.image-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    margin-top: 10px;
+}
+
+.image-listing img{
+    /* max-width: 200px; */
+    height: 200px;
+}
