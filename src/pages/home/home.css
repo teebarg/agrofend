@@ -1,0 +1,37 @@
+.home__wrapper {
+    height: calc(100vh - 50px);
+}
+.search__container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+
+.search__container select {
+    width: max-content;
+    margin-right: 5px;
+}
+
+.search__container div {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+
+.search__container input {
+    min-width: 60vw;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.form-row {
+    margin: 0 !important;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
