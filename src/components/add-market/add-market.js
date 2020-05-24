@@ -89,9 +89,9 @@ const AddMarket = ({ data: { market, mode } }) => {
 
   return (
     <>
-      <Form noValidate onSubmit={formik.handleSubmit} style={{width: '50%'}}>
+      <Form noValidate onSubmit={formik.handleSubmit}>
         <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationFormik01">
+          <Form.Group as={Col} md="3" sm="6" controlId="validationFormik01">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
@@ -107,7 +107,7 @@ const AddMarket = ({ data: { market, mode } }) => {
               {formik.errors.name}
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationFormik02">
+          <Form.Group as={Col} md="3" sm="6" controlId="validationFormik02">
             <Form.Label>Description</Form.Label>
             <Form.Control
               name="description"
@@ -125,12 +125,12 @@ const AddMarket = ({ data: { market, mode } }) => {
             </Form.Control.Feedback>
           </Form.Group>
         </Form.Row>
-        <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationFormik03">
+        <Form.Row style={{marginBottom:"10px"}}>
+          <Form.Group as={Col} md="3" sm="6" controlId="validationFormik03">
             <Form.Label>Address</Form.Label>
             <Search formik={formik} panTo={handleGeo} />
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationFormik04">
+          <Form.Group as={Col} md="3" sm="6" controlId="validationFormik04">
             <Form.Label>Category</Form.Label>
             <Form.Control
               name="categoryId"
@@ -156,7 +156,7 @@ const AddMarket = ({ data: { market, mode } }) => {
             </Form.Control.Feedback>
           </Form.Group>
         </Form.Row>
-        {isLoading ? (<Loader />) : (<Button type="submit" size="sm">{mode === "edit" ? "Update" : "Create"}</Button>)}    
+        {isLoading ? (<Loader />) : (<Button type="submit" size="sm" style={{marginLeft: "5px"}}>{mode === "edit" ? "Update" : "Create"}</Button>)}    
       </Form>
     </>
   );

@@ -62,6 +62,12 @@ const Map = ({ markers, loc }) => {
           <Marker
             key={key}
             position={{ lat: marker.latitude, lng: marker.longitude }}
+            icon={{
+              url: "/logo2.png",
+              scaledSize: new window.google.maps.Size(60, 30),
+              origin: new window.google.maps.Point(0, 0),
+              anchor: new window.google.maps.Point(30, 15)
+            }}
             onClick={() => {
               setSelected(marker);
             }}

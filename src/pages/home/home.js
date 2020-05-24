@@ -18,6 +18,7 @@ const Home = () => {
   });
 
   useEffect(() => {
+    document.title = "Market Food Hub";
     getCategories();
   }, []);
 
@@ -87,9 +88,9 @@ const Home = () => {
               </Button>
             </div>
           </Form>
-          <Locate panTo={panTo} />
         </div>
         <Map loc={loc} markers={markers} />
+        <Locate panTo={panTo} />
       </div>
     </>
   );

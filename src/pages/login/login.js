@@ -42,7 +42,7 @@ const Login = () => {
       try {
         const { data } = await HttpService.login(values);
         Cookies.set("agro_cookie", data.data[0].token);
-        history.push("/admin");
+        history.push("/admin/dashboard");
         setIsLoading(false);
       } catch (err) {
         Utility.showError(err);
@@ -78,7 +78,7 @@ const Login = () => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicPassword" style={{marginBottom: '10px'}}>
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -99,7 +99,7 @@ const Login = () => {
           {isLoading ? (
             <Loader />
           ) : (
-            <Button variant="primary" type="submit">
+            <Button variant="primary" size="sm" type="submit">
             Submit
           </Button>
           )}

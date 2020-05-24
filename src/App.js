@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import NotFound from "./pages/not-found/404";
 import AdminModule from "./modules/admin/admin"
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'js-cookie';
 
 const App = () => {

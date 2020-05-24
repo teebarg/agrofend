@@ -5,6 +5,7 @@ import {HttpService} from "../../services/httpService";
 import { useFormik } from "formik";
 import Map from "../../components/map/google-map";
 import swal from "sweetalert";
+import "./dashboard.css";
 
 const Dashboard = () => {
     const [markers, setMarkers] = useState([]);
@@ -45,7 +46,7 @@ const Dashboard = () => {
 
   return (
     <div style={container}>
-        <div style={{position: 'absolute', width: '20vw', zIndex: 1, top: '5px'}}>
+        <div className="admin__search__container">
           <Search formik={formik} panTo={panTo} />
         </div>
         <Locate panTo={panTo} />
