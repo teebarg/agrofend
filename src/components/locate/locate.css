@@ -1,13 +1,23 @@
 .locate {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    z-index: 10;
-  }
+  position: absolute;
+  bottom: 3rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  z-index: 10;
+  animation: ripple 2s infinite;
+}
 
-  .locate img {
-    width: 50px;
-    cursor: pointer;
+.locate img {
+  width: 70px;
+  cursor: pointer;
+}
+
+@keyframes ripple {
+  0% {
+    transform: rotate(0deg);;
   }
+  100% {
+    transform: rotate(360deg);;
+  }
+}

@@ -6,7 +6,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 function renderTooltip(props) {
   return (
     <Tooltip id="button-tooltip" {...props}>
-      Market Near You
+      Click to see Markets Near You
     </Tooltip>
   );
 }
@@ -15,11 +15,11 @@ const Locate = ({ panTo }) => {
   const btnRef = React.createRef()
   return (
     <>
-      {/* <OverlayTrigger
-        placement="bottom"
+      <OverlayTrigger
+        placement="top"
         delay={{ show: 250, hide: 400 }}
         overlay={renderTooltip}
-      > */}
+      >
         <button
           ref={btnRef}
           className={"locate"}
@@ -35,9 +35,9 @@ const Locate = ({ panTo }) => {
             );
           }}
         >
-          <img src="ipurush_Compass.svg" alt="compass" />
+          <img src="/ipurush_Compass.svg" alt="compass" />
         </button>
-      {/* </OverlayTrigger> */}
+      </OverlayTrigger>
     </>
   );
 };

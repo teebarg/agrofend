@@ -11,10 +11,10 @@ const MarketCreate = () => {
   }, []);
 
   return (
-    <>
+    <div style={{padding: "10px"}}>
         <h3>Create Market</h3>
         {show && <AddMarket data={{mode: "add", market: null}} />}
-    </>
+    </div>
   );
 };
 

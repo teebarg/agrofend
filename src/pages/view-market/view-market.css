@@ -6,6 +6,11 @@
 }
 
 .image-listing img{
-    /* max-width: 200px; */
     height: 200px;
+}
+
+@media (max-width: 575.98px) {
+    .image-listing {
+        padding: 10px;
+    }
 }

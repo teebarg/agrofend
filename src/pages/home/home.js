@@ -87,9 +87,9 @@ const Home = () => {
               </Button>
             </div>
           </Form>
-          <Locate panTo={panTo} />
         </div>
         <Map loc={loc} markers={markers} />
+        <Locate panTo={panTo} />
       </div>
     </>
   );

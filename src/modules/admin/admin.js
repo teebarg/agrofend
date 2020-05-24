@@ -1,18 +1,19 @@
-import React from "react";
-import {
-  useLoadScript
-} from "@react-google-maps/api";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import React, { useState } from "react";
+import { useLoadScript } from "@react-google-maps/api";
+import { BrowserRouter as Router, Route, Switch, NavLink  } from "react-router-dom";
 import MarketListing from "../../pages/market-listing/market-listing";
 import MarketView from "../../pages/view-market/view-market";
 import MarketCreate from "../../pages/create-market/create-market";
 import Button from "react-bootstrap/Button";
-import Dashboard from '../../pages/dashboard/dashboard';
+import Dashboard from "../../pages/dashboard/dashboard";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
+import "./admin.css";
 
 const AdminModule = () => {
   const libraries = ["places"];
+  const [show, setShow] = useState(false);
+
   let history = useHistory();
   useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -20,13 +21,17 @@ const AdminModule = () => {
   });
 
   const logout = () => {
-    Cookies.remove('agro_cookie')
-    history.push("/")
+    Cookies.remove("agro_cookie");
+    history.push("/");
+  };
+
+  const handleSidebar = () => {
+    setShow(!show);
   };
 
   const routes = [
     {
-      path: "/admin",
+      path: "/admin/dashboard",
       exact: true,
       sidebar: () => <div>home!</div>,
       main: () => <Dashboard />,
@@ -50,23 +55,21 @@ const AdminModule = () => {
 
   return (
     <Router>
-      <div style={{ display: "flex", height: "100vh" }}>
-        <div
-          style={{
-            padding: "10px",
-            width: "15%",
-            background: "#f0f0f0",
-          }}
-        >
+      <div className="admin_container">
+        <div className={"sidebar " + (show ? "active" : "")}>
+          <button onClick={handleSidebar} className={"btn show__btn"}>
+            {" "}
+            <img src={show ? "/close.svg" : "/open.svg"} alt="close" />{" "}
+          </button>
           <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
-              <Link to="/admin">Home</Link>
+              <NavLink onClick={() => setShow(false)}  to="/admin/dashboard" activeClassName="selected">Home</NavLink >
             </li>
             <li>
-              <Link to="/admin/create-market">Create Market</Link>
+              <NavLink onClick={() => setShow(false)} to="/admin/create-market" activeClassName="selected">Create Market</NavLink>
             </li>
             <li>
-              <Link to="/admin/listing">List Markets</Link>
+              <NavLink onClick={() => setShow(false)}  to="/admin/listing" activeClassName="selected" >List Markets</NavLink >
             </li>
           </ul>
           <div
@@ -78,7 +81,7 @@ const AdminModule = () => {
           </div>
         </div>
 
-        <div style={{ flex: 1, padding: "0 10px", height: "inherit", overflowY: "auto" }}>
+        <div className="content">
           <Switch>
             {routes.map((route, index) => (
               <Route

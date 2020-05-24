@@ -1,0 +1,13 @@
+.admin__search__container {
+  position: absolute;
+  width: 20vw;
+  z-index: 1;
+  top: 5px;
+}
+
+@media (max-width: 575.98px) {
+  .admin__search__container {
+    width: 70vw;
+    left: 5px;
+  }
+}

@@ -19,7 +19,16 @@ h4,
 h5,
 h6,
 p {
-    margin: 0 !important;
+    margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: inherit;
 }
 
 /* Chrome, Safari, Edge, Opera */
