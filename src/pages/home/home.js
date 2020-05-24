@@ -18,6 +18,7 @@ const Home = () => {
   });
 
   useEffect(() => {
+    document.title = "Market Food Hub";
     getCategories();
   }, []);
 

@@ -5,7 +5,7 @@ import "./market.css";
 const Market = ({ market }) => {
   return (
     <div className="market">
-      <Card style={{ width: "20rem" }}>
+      <Card style={{  }}>
         <Card.Body>
           <div className="image--container">
             {market && market.Images.map((item,key) => (<img key={key} src={ process.env.REACT_APP_IMAGE_URL + item.image} alt={item.image} />))}
